@@ -1,0 +1,259 @@
+<!doctype html>
+<!--
+  Portfolio of R. Venketasubramaniaen
+  Host: put index.html and the img/ folder in a GitHub repo named venkxzs.github.io
+  (or any repo, then Settings > Pages), or drag the folder onto Netlify / Vercel.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>R. Venketasubramaniaen | Portfolio</title>
+<meta name="description" content="Data Science student building with Python, machine learning and the web.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0F0F12; --card:#17171C; --line:#2A2A31; --text:#F3F0E8;
+  --muted:#B9B6AD; --dim:#A8A59C; --accent:#FF7A4D;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;margin:0}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+section{padding:56px 0}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:2px;color:var(--accent);margin-bottom:16px}
+h2{font-size:clamp(30px,4vw,48px);line-height:1.1;letter-spacing:-1px;font-weight:700}
+.head{margin-bottom:32px}
+
+/* nav */
+nav{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;padding-top:22px;padding-bottom:22px}
+.brand{display:flex;align-items:center;gap:12px;min-height:44px}
+.logo{width:40px;height:40px;border-radius:12px;background:var(--accent);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-weight:700;font-size:17px}
+.brand span.n{font-family:'Space Grotesk';font-weight:600;font-size:16px}
+.links{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;font-size:14px;font-weight:500;color:#C9C6BD}
+.links a{padding:12px}
+.links a:hover{color:var(--accent)}
+.links a.ghost{padding:12px 18px;border-radius:999px;border:1px solid #3A3A42;color:var(--text);margin-left:6px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 26px;border-radius:999px;font-weight:600;font-size:15px;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.solid{background:var(--accent);color:var(--bg)}
+.btn.line{border:1px solid #4A4A54}
+
+/* hero */
+.hero{display:flex;flex-wrap:wrap;gap:56px;align-items:center;padding-top:40px;padding-bottom:72px}
+.hero .txt{flex:1 1 480px;min-width:0;display:flex;flex-direction:column;gap:28px}
+.pill{align-self:flex-start;display:flex;align-items:center;gap:10px;padding:8px 16px;border-radius:999px;background:#1B1B20;border:1px solid #2C2C34;font-size:13px;font-weight:500;color:#D9D6CD}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+h1{font-weight:700;font-size:clamp(40px,6.2vw,80px);line-height:1.02;letter-spacing:-2px}
+h1 span{color:var(--accent)}
+.lead{margin:0;font-size:clamp(16px,1.6vw,20px);line-height:1.6;color:var(--muted);max-width:560px}
+.cta{display:flex;flex-wrap:wrap;gap:14px}
+.facts{display:flex;flex-wrap:wrap;gap:28px 40px;padding-top:12px;border-top:1px solid #26262D}
+.facts div{display:flex;flex-direction:column;gap:4px}
+.facts b{font-family:'Space Grotesk';font-weight:600;font-size:18px}
+.facts small{font-size:13px;color:var(--dim)}
+.photo{flex:0 1 400px;min-width:260px;position:relative;padding:24px 24px 40px 0}
+.photo .bk{position:absolute;right:0;top:48px;width:86%;height:86%;border-radius:32px;background:var(--accent);transform:rotate(5deg)}
+.photo img{position:relative;width:calc(100% - 24px);aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;border-radius:32px;transform:rotate(-2deg);border:4px solid var(--bg)}
+.photo .tag{position:absolute;left:-14px;bottom:8px;padding:12px 18px;border-radius:16px;background:var(--text);color:var(--bg);font-size:13px;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+
+/* band */
+.band{background:var(--accent);color:var(--bg);padding:18px 0;transform:rotate(-1deg);margin:8px 0 40px}
+.band div{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 36px;padding:0 24px;font-family:'Space Grotesk';font-weight:700;font-size:clamp(16px,2.2vw,26px)}
+
+/* about */
+.about{display:flex;flex-wrap:wrap;gap:48px}
+.about .l{flex:1 1 380px;min-width:0}
+.about .l p{font-size:16px;line-height:1.75;color:var(--muted);margin:20px 0 0}
+.about .r{flex:1 1 400px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.card h3{font-family:'Inter';font-size:13px;font-weight:600;letter-spacing:1px;color:var(--dim);margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:9px 16px;border-radius:999px;border:1px solid #3A3A42;font-size:14px;font-weight:500}
+.chip.hot{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:600}
+
+/* journey */
+.grid{display:flex;flex-wrap:wrap;gap:20px}
+.job{flex:1 1 calc(50% - 20px);min-width:280px;padding:28px;border-radius:24px;display:flex;flex-direction:column;gap:14px}
+.job .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:13px;color:var(--dim)}
+.job .top b{font-weight:600;letter-spacing:1px;color:var(--accent)}
+.job h3{font-size:26px;letter-spacing:-.5px;color:var(--text);font-weight:700;margin:0}
+.job p{margin:0;font-size:15px;line-height:1.7;color:var(--muted)}
+
+/* research */
+.research{padding:clamp(28px,4vw,52px);border-radius:32px;background:var(--text);color:var(--bg);display:flex;flex-wrap:wrap;gap:32px;align-items:center;justify-content:space-between}
+.research .t{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:14px}
+.research small{font-size:13px;font-weight:700;letter-spacing:2px;color:#B8431A}
+.research h3{font-size:clamp(24px,3vw,36px);line-height:1.15;letter-spacing:-.8px;font-weight:700}
+.research p{margin:0;font-size:15px;line-height:1.65;color:#3B3A36}
+.award{display:flex;flex-direction:column;gap:6px;padding:22px 28px;border-radius:20px;background:var(--bg);color:var(--text)}
+.award small{font-size:12px;font-weight:600;letter-spacing:1.5px;color:var(--accent)}
+.award b{font-family:'Space Grotesk';font-size:24px}
+
+/* leadership */
+.lead-row{display:flex;flex-wrap:wrap;gap:36px;align-items:center}
+.lead-row img{flex:1 1 440px;min-width:0;aspect-ratio:4/3;object-fit:cover;border-radius:28px}
+.lead-row .t{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:24px}
+.role small{display:block;font-size:13px;font-weight:600;letter-spacing:1px;color:var(--dim);margin-bottom:8px}
+.role h3{font-size:28px;letter-spacing:-.5px;font-weight:700}
+.role p{margin:8px 0 0;font-size:15px;line-height:1.7;color:var(--muted)}
+hr{border:0;height:1px;background:#26262D;width:100%;margin:0}
+
+/* gallery */
+.gal{display:flex;flex-wrap:wrap;gap:20px;align-items:stretch}
+.gal figure{margin:0;display:flex;flex-direction:column;gap:12px;min-width:0}
+.gal figure:first-child{flex:1 1 340px}
+.gal figure:last-child{flex:1.4 1 420px}
+.gal img{width:100%;object-fit:cover;border-radius:24px}
+.gal figure:first-child img{aspect-ratio:1/1;transform:rotate(-1deg)}
+.gal figure:last-child img{aspect-ratio:3/2;transform:rotate(1deg)}
+.gal figcaption{font-size:14px;color:var(--dim);line-height:1.5}
+
+/* github */
+.gh{padding:clamp(32px,5vw,64px);border-radius:32px;background:var(--accent);color:var(--bg);display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between}
+.gh h2{letter-spacing:-1px}
+.gh p{margin:12px 0 0;font-size:16px;line-height:1.6;color:#2A1208}
+.gh .btn{background:var(--bg);color:var(--text);min-height:52px;padding:0 30px;font-size:16px}
+
+/* contact */
+.contact{display:flex;flex-wrap:wrap;gap:16px}
+.contact a{flex:1 1 230px;min-width:0;display:flex;flex-direction:column;gap:8px}
+.contact small{font-size:12px;font-weight:600;letter-spacing:1.5px;color:var(--dim)}
+.contact span{font-size:16px;font-weight:500;overflow-wrap:anywhere}
+footer{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding-top:28px;padding-bottom:48px;border-top:1px solid #26262D;font-size:13px;color:var(--dim)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav>
+    <a class="brand" href="#top"><span class="logo">RV</span><span class="n">R. Venketasubramaniaen</span></a>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#journey">Journey</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+      <a class="ghost" href="https://github.com/venkxzs">GitHub</a>
+    </div>
+  </nav>
+</div>
+
+<header id="top" class="wrap hero">
+  <div class="txt">
+    <div class="pill"><i></i>Open to internships and projects</div>
+    <h1>Hi, I'm <span>R. Venketasubramaniaen.</span></h1>
+    <p class="lead">Data Science student who builds with Python, machine learning and the modern web. Club president, conference award winner and Carnatic violinist.</p>
+    <div class="cta">
+      <a class="btn solid" href="https://github.com/venkxzs">View my GitHub</a>
+      <a class="btn line" href="https://www.linkedin.com/in/r-venkat-7a22963aa/">Connect on LinkedIn</a>
+    </div>
+    <div class="facts">
+      <div><b>President</b><small>Vector Data Science Club</small></div>
+      <div><b>Best Paper Presenter</b><small>Cape Forum, May 2025</small></div>
+      <div><b>B.Sc. Data Science (Hons)</b><small>Ramaiah University of Applied Sciences</small></div>
+    </div>
+  </div>
+  <div class="photo">
+    <div class="bk"></div>
+    <img src="img/portrait.jpg" alt="Portrait of R. Venketasubramaniaen in a navy blazer">
+    <div class="tag">Bengaluru, India</div>
+  </div>
+</header>
+
+<div class="band"><div>
+  <span>Python</span><span>Machine Learning</span><span>R Programming</span><span>Next.js</span><span>React</span><span>Tailwind CSS</span><span>Meta Ads</span><span>Google Sheets</span>
+</div></div>
+
+<section id="about"><div class="wrap about">
+  <div class="l">
+    <div class="eyebrow">01 · ABOUT</div>
+    <h2>Statistics, code and curiosity.</h2>
+    <p>I'm a motivated Data Science student with a strong foundation in statistics, programming, machine learning and analytical thinking. I'm looking for internships, projects and collaborative learning environments where I can apply what I know and keep growing.</p>
+    <p>Outside of class I lead the Vector Data Science Club, head the Center of AI for Social Good at GG Campus, and play the Carnatic violin with the Euphony Band Club.</p>
+  </div>
+  <div class="r">
+    <div class="card"><h3>PROGRAMMING &amp; ML</h3><div class="chips">
+      <span class="chip hot">Python · Advanced</span><span class="chip hot">Machine Learning · Advanced</span><span class="chip">R Programming</span><span class="chip">JavaScript</span></div></div>
+    <div class="card"><h3>DATA TOOLS</h3><div class="chips">
+      <span class="chip">Excel</span><span class="chip">Google Colab</span><span class="chip">Google Sheets</span><span class="chip">Meta Ads analysis</span></div></div>
+    <div class="card"><h3>WEB DEVELOPMENT</h3><div class="chips">
+      <span class="chip">Next.js</span><span class="chip">Vite + React</span><span class="chip">Tailwind CSS</span><span class="chip">API Integration</span></div></div>
+  </div>
+</div></section>
+
+<section id="journey"><div class="wrap">
+  <div class="head"><div class="eyebrow">02 · JOURNEY</div><h2>Internships and learning.</h2></div>
+  <div class="grid">
+    <div class="card job"><div class="top"><b>INTERNSHIP</b><span>2024</span></div><h3>NSP Global Tech</h3><p>Web Development and Full Stack Web Development, working with Tailwind CSS.</p></div>
+    <div class="card job"><div class="top"><b>INTERNSHIP</b></div><h3>Altered Minds</h3><p>Developed the skills to build a project and carry out analysis on Meta Ads, and worked with Google Sheets.</p></div>
+    <div class="card job"><div class="top"><b>COURSE</b><span>2024</span></div><h3>Udemy</h3><p>R Programming A-Z™: R for Data Science with Real Exercises.</p></div>
+    <div class="card job"><div class="top"><b>VIRTUAL EXPERIENCE</b></div><h3>Forage</h3><p>Two projects completed based on data analytics.</p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:24px"><div class="wrap">
+  <div class="research">
+    <div class="t">
+      <small>RESEARCH · MAY 2025</small>
+      <h3>“Hybrid Learning Enhancing Education in the Digital Age”</h3>
+      <p>Presented at the Cape Forum International Conference, Higher Education 360 Degree.</p>
+    </div>
+    <div class="award"><small>AWARD</small><b>Best Paper Presenter</b></div>
+  </div>
+</div></section>
+
+<section id="leadership"><div class="wrap">
+  <div class="head"><div class="eyebrow">03 · LEADERSHIP</div><h2>Leading, organising, performing.</h2></div>
+  <div class="lead-row">
+    <img src="img/vector-connect.jpg" alt="Group photo at the Vector Connect event">
+    <div class="t">
+      <div class="role"><small>M S RAMAIAH UNIVERSITY · 2024 – PRESENT</small><h3>President, Vector Data Science Club</h3><p>Organised and coordinated various events successfully, bringing students and faculty together around data science.</p></div>
+      <hr>
+      <div class="role"><small>GG CAMPUS</small><h3>Head, Center of AI for Social Good</h3></div>
+      <hr>
+      <div class="chips"><span class="chip">Carnatic violinist · Euphony Band Club</span><span class="chip">Volunteer · Akaira cultural fest</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="gallery"><div class="wrap">
+  <div class="head"><div class="eyebrow">04 · GALLERY</div><h2>Moments with the community.</h2></div>
+  <div class="gal">
+    <figure><img src="img/campus.jpg" alt="Group photo outside the Department of Computer Science and Engineering"><figcaption>Department of Computer Science and Engineering, Ramaiah University of Applied Sciences</figcaption></figure>
+    <figure><img src="img/team.jpg" alt="Smiling group of students in navy polo shirts"><figcaption>With the team</figcaption></figure>
+  </div>
+</div></section>
+
+<section style="padding-top:24px"><div class="wrap">
+  <div class="gh">
+    <div><h2>See what I'm building.</h2><p>My code, experiments and projects live on GitHub.</p></div>
+    <a class="btn" href="https://github.com/venkxzs">github.com/venkxzs</a>
+  </div>
+</div></section>
+
+<section id="contact" style="padding-top:40px"><div class="wrap">
+  <div class="head"><div class="eyebrow">05 · CONTACT</div><h2>Let's work together.</h2></div>
+  <div class="contact">
+    <a class="card" href="mailto:venkatsubramanian06@gmail.com"><small>EMAIL</small><span>venkatsubramanian06@gmail.com</span></a>
+    <a class="card" href="tel:+917019696951"><small>PHONE</small><span>+91 7019696951</span></a>
+    <a class="card" href="https://www.linkedin.com/in/r-venkat-7a22963aa/"><small>LINKEDIN</small><span>r-venkat-7a22963aa</span></a>
+    <a class="card" href="https://github.com/venkxzs"><small>GITHUB</small><span>venkxzs</span></a>
+  </div>
+</div></section>
+
+<div class="wrap"><footer>
+  <span>R. Venketasubramaniaen · Bommanahalli, Bengaluru</span>
+  <span>B.Sc. Data Science (Hons), M S Ramaiah University of Applied Sciences</span>
+</footer></div>
+
+</body>
+</html>
